@@ -1,0 +1,31 @@
+{
+  "name": "schooledu",
+  "version": "1.0.0",
+  "description": "Test yechiladigan sayt",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev-admin": "nodemon --exec ts-node -- --files ./src/admin/server.ts",
+    "dev-user": "nodemon --exec ts-node -- --files ./src/user/server.ts"
+  },
+  "author": "Iqboljon",
+  "license": "ISC",
+  "dependencies": {
+    "@typegoose/typegoose": "^9.11.0",
+    "@types/node": "^18.6.3",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.13.2",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "express-fileupload": "^1.4.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.5.0",
+    "nodemon": "^2.0.19",
+    "sha256": "^0.2.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.7.4"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13"
+  }
+}
