@@ -1,4 +1,4 @@
-import { ThemaResponse } from "../../../../../../common/db/model/admin/thema/exception";
+import { ThemaResponse } from "../../../../../../common/db/model/admin/class/subject/chapter/thema/exception";
 import { themaService } from "../../../../../../common/services/Admin/class/subject/chapter/thema/thema.service";
 import { ThemaGetDto, ThemaDto } from "../../../../../../common/validation/dto/admin/class/subject/chapter/thema/thema.dto";
 import { DtoGroups } from "../../../../../../common/validation/dtoGroups.dto";
@@ -8,8 +8,11 @@ export async function getPagingThemaHandler(req, res, next) {
     try {
         const data = await validateIt(req.query, ThemaGetDto, DtoGroups.PAGENATION);
         const thema = await themaService.getpagingThema(data);
-        const count = await themaService.getCount();
-        if(!thema) throw ThemaResponse.NotFound(data);
+        const Id = {
+            chapterId: data.chapterId
+        }
+        const count = await themaService.getCount(Id);
+        if(!thema[0]) throw ThemaResponse.NotFound(data);
         const resault = {
             data: thema,
             themaCount: count,

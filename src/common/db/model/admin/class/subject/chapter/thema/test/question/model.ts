@@ -1,9 +1,9 @@
 import { getModelForClass, index, modelOptions, prop, Ref } from "@typegoose/typegoose";
 import { Types } from "mongoose";
-import { CollectionNames } from "../../../../../constants/collections";
-import { BaseModel } from "../../../base.model";
-import { Translation } from "../../../translate/tranlate.model";
-import { Test } from "../test.model";
+import { CollectionNames } from "../../../../../../../../../constants/collections";
+import { BaseModel } from "../../../../../../../base.model";
+
+import { Test } from "../model";
 
 class Question {
     @prop({

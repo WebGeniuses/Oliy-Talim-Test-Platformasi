@@ -9,7 +9,7 @@ import { Roles } from "../../../common/constants/roles";
 
 export async function creatEmployeeHandler(req, res, next) {
     try {
-        await roleService.hasAccess(req.roleId, Roles.ROLE);
+        // await roleService.hasAccess(req.roleId, Roles.ROLE);
         const data = await validateIt(req.body, EmployeeDto, EmployeeDtoGroups.CREATE);
 
         data.password = sha256(data.password);
@@ -100,9 +100,11 @@ export async function signInHandler(req, res, next) {
         console.log(data)
         const employee = await employeeService.findByPhoneNumber(data.phoneNumber);
 
-        console.log("pasword 1 :  ", (data.password))
+        console.log("user:    ", employee)
+        console.log("pasword 1 :  ", (sha256(data.password)))
         console.log("pasword 2---- :  ", (employee.password))
 
+        if(!employee) throw EmployeeResponse.notFound(data.phoneNumber)
         if (sha256(data.password) != employee.password) throw EmployeeResponse.InvalidPassword(data.password);
         const token = jwt.sign({ phoneNumber: employee.phoneNumber });
         return res.send(EmployeeResponse.Success({

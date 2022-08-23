@@ -15,7 +15,7 @@ export class ThemaDto extends BaseDto {
     @IsString({
         groups: [DtoGroups.CREATE, DtoGroups.UPDATE]
     })
-    themaName: string;
+    name: string;
     
     @IsOptional({
         groups: [DtoGroups.UPDATE]

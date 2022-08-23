@@ -1,12 +1,12 @@
 import { getModelForClass, index, modelOptions, prop, Ref } from "@typegoose/typegoose";
-import { Collection } from "mongoose";
-import { CollectionNames } from "../../../../constants/collections";
-import { BaseModel } from "../../base.model";
-import { Category } from "../category/category.model";
-import { Chapter } from "../chapter/chapter.model";
-import { Class } from "../class/class.model";
-import { Subject } from "../subject/subject.model";
-import { Thema } from "../thema/thema.model";
+import { CollectionNames } from "../../../../../../../../constants/collections";
+import { BaseModel } from "../../../../../../base.model";
+import { Category } from "../../../../../category/category.model";
+import { Class } from "../../../../model";
+import { Subject } from "../../../model";
+import { Chapter } from "../../model";
+import { Thema } from "../model";
+
 
 
 
@@ -17,11 +17,11 @@ import { Thema } from "../thema/thema.model";
 })
 
 @index({
-    testName: 1
+    name: 1
 },
     {
         background: true,
-        name: 'testName',
+        name: 'name',
         unique: true,
         partialFilterExpression: {
             isDeleted: {
@@ -34,7 +34,7 @@ export class Test extends BaseModel {
     @prop({
         required: true,
     })
-    testName: string;
+    name: string;
 
     @prop({
         default: undefined,
@@ -44,11 +44,11 @@ export class Test extends BaseModel {
     classId: Ref<Class>;
 
     @prop({
-        default: undefined,
+        required:true,
         trim: true,
         ref: CollectionNames.SUBJECT
     })
-    subjectId?: Ref<Subject>;
+    subjectId: Ref<Subject>;
 
     @prop({
         default: undefined,
@@ -70,11 +70,6 @@ export class Test extends BaseModel {
         ref: CollectionNames.CATEGORY,
     })
     categoryId?: Ref<Category>;
-
-    @prop({
-        required: true,
-    })
-    testStart: string
 
     @prop({
         required: true,

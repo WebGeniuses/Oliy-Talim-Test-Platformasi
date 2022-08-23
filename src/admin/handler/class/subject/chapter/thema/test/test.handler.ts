@@ -1,5 +1,5 @@
 import { Roles } from "../../../../../../../common/constants/roles";
-import { TestResponse } from "../../../../../../../common/db/model/admin/test/exception";
+import { TestResponse } from "../../../../../../../common/db/model/admin/class/subject/chapter/thema/test/exception";
 import { testService } from "../../../../../../../common/services/Admin/class/subject/chapter/thema/test/test.service";
 import { TestDto, TestGetDto } from "../../../../../../../common/validation/dto/admin/class/subject/chapter/thema/test/test.dto";
 import { DtoGroups } from "../../../../../../../common/validation/dtoGroups.dto";

@@ -4,7 +4,7 @@ import { authToken } from "../middlewares/authToken";
 
 
 const router = Router();
-router.post('/',authToken, creatEmployeeHandler);
+router.post('/', creatEmployeeHandler);
 router.get('/paging',authToken, getPagingEmployeeHandler);
 router.get('/phone',authToken, findEmployeByPhonenumber);
 router.get('/', authToken , findEmployeeByIdHandler);

@@ -10,7 +10,7 @@ export class TestDto extends BaseDto {
     @IsString({
         groups:[DtoGroups.CREATE, DtoGroups.UPDATE]
     })
-    testName:string;
+    name:string;
 
     @IsOptional({
         groups:[DtoGroups.UPDATE]
@@ -52,13 +52,6 @@ export class TestDto extends BaseDto {
     })
     categoryId: string;
 
-    @IsOptional({
-        groups:[DtoGroups.UPDATE]
-    })
-    @IsString({
-        groups:[DtoGroups.CREATE, DtoGroups.UPDATE]
-    })
-    testStart: string;
 
     @IsOptional({
         groups:[DtoGroups.UPDATE]

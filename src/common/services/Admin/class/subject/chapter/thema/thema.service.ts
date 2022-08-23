@@ -1,6 +1,6 @@
 import { ModelType } from "@typegoose/typegoose/lib/types";
 import { Types } from "mongoose";
-import { Thema, ThemaModel } from "../../../../../../db/model/admin/thema/thema.model";
+import { Thema, ThemaModel } from "../../../../../../db/model/admin/class/subject/chapter/thema/model";
 import { ThemaGetDto } from "../../../../../../validation/dto/admin/class/subject/chapter/thema/thema.dto";
 import { CommonServices } from "../../../../../common.service";
 

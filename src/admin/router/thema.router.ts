@@ -3,7 +3,7 @@ import { createThemaHandler, deleteThemaHandler, getByIdThemaHandler, getPagingT
 
 const router = Router();
 router.post('/',createThemaHandler);
-router.get("/",getPagingThemaHandler);
+router.get("/", );
 router.get('/:_id', getByIdThemaHandler);
 router.put('/', updateThemaHandler);
 router.delete('/:_id', deleteThemaHandler)

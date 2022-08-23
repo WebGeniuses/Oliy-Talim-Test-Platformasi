@@ -14,5 +14,7 @@ export enum ErrorCodes {
   CATEGORY = 22000,
   REGION = 23000,
   USERTYPE = 24000,
+  QUIZ = 25000,
+  ANSWER = 26000
 
 }

@@ -3,7 +3,7 @@ import { createRoleHandler, getRoleByIdHandler, getRolePagingHandler } from "../
 import { authToken } from "../middlewares/authToken";
 
 const router = Router()
-router.post('/', authToken, createRoleHandler);
+router.post('/', createRoleHandler);
 router.get('/:_id', authToken, getRoleByIdHandler);
 router.get('/', authToken, getRolePagingHandler)
 

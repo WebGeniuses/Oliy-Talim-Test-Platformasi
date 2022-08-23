@@ -1,7 +1,7 @@
 import { getModelForClass, index, modelOptions, prop, Ref } from "@typegoose/typegoose";
-import { CollectionNames } from "../../../../constants/collections";
-import { BaseModel } from "../../base.model";
-import { Chapter } from "../chapter/chapter.model";
+import { CollectionNames } from "../../../../../../../constants/collections";
+import { BaseModel } from "../../../../../base.model";
+import { Chapter } from "../model";
 
 
 
@@ -12,11 +12,11 @@ import { Chapter } from "../chapter/chapter.model";
 })
 
 @index({
-    themaName: 1
+    name: 1
 },
     {
         background: true,
-        name: 'themaName',
+        name: 'name',
         unique: true,
         partialFilterExpression: {
             isDeleted: {
@@ -30,7 +30,7 @@ export class Thema extends BaseModel{
         required: true,
         trim: true
     })
-    themaName: string;
+    name: string;
 
     @prop({
         required: true,

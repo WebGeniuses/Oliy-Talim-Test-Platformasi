@@ -1,4 +1,4 @@
-import { ChapterResponse } from "../../../../../common/db/model/admin/chapter/exception";
+import { ChapterResponse } from "../../../../../common/db/model/admin/class/subject/chapter/exception";
 import { chapterService } from "../../../../../common/services/Admin/class/subject/chapter/chapter.service";
 import { ChapterGetDto, ChapterDto } from "../../../../../common/validation/dto/admin/class/subject/chapter/chapter.dto";
 import { DtoGroups } from "../../../../../common/validation/dtoGroups.dto";

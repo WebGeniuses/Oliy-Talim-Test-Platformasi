@@ -1,6 +1,6 @@
 import { ModelType } from "@typegoose/typegoose/lib/types";
 import { Types } from "mongoose";
-import { Chapter, ChapterModel } from "../../../../../db/model/admin/chapter/chapter.model";
+import { Chapter, ChapterModel } from "../../../../../db/model/admin/class/subject/chapter/model";
 import { ChapterGetDto } from "../../../../../validation/dto/admin/class/subject/chapter/chapter.dto";
 import { CommonServices } from "../../../../common.service";
 

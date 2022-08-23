@@ -1,5 +1,5 @@
 import { Roles } from "../../../../../common/constants/roles";
-import { ChapterResponse } from "../../../../../common/db/model/admin/chapter/exception";
+import { ChapterResponse } from "../../../../../common/db/model/admin/class/subject/chapter/exception";
 import { chapterService } from "../../../../../common/services/Admin/class/subject/chapter/chapter.service";
 import { roleService } from "../../../../../common/services/Admin/role/role.service";
 import { ChapterDto, ChapterGetDto } from "../../../../../common/validation/dto/admin/class/subject/chapter/chapter.dto";

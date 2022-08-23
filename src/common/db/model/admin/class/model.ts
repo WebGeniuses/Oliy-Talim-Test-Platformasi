@@ -15,7 +15,7 @@ import { BaseModel } from "../../base.model";
 },
     {
         background: true,
-        name: 'className',
+        name: 'name',
         unique: true,
         partialFilterExpression: {
             isDeleted: {

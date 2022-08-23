@@ -16,7 +16,7 @@ class EmployeeService extends CommonServices<Employee>{
             if (!admin) throw EmployeeResponse.notFound(id);
             return admin;
         } catch (e) {
-            return  e;
+            return e;
         }
     }
 
@@ -26,43 +26,43 @@ class EmployeeService extends CommonServices<Employee>{
         } catch (e) {
             console.log("error/// /// /// ", e)
             if (e.code == 11000) throw EmployeeResponse.AllreadyExist(e)
-            return  e;
+            return e;
         }
     }
 
     public async findByPhoneNumber(phone) {
         try {
-            console.log("/// phone /// ",phone)
-            let employee = await this.model.find({ phoneNumber: phone });
-            console.log("////employee////   ",employee)
-            if (employee.length==0)  throw EmployeeResponse.notFound(phone)
-            return employee[0];
+            console.log("/// phone /// ", phone)
+            let employee = (await this.model.find({ phoneNumber: phone })).shift();
+            console.log("////employee////   ", employee)
+            if (!employee) throw EmployeeResponse.notFound(phone)
+            return employee;
         } catch (e) {
             console.log(e)
-            return  e;
+            throw e;
         }
     }
 
-    public async getPaging<T>(data:EmployeeGetDto){
-            try {
-                let query = {
-                    isDeleted: false,
-                };
-    
-                const $project = {
-                    $project: {
-                        _id: 1,
-                        firstname:1,
-                        lastname: 1,
-                        phoneNumber: 1,
-                        roleId: 1,
-                    }
-                };
-                const $pipeline = [$project];
-                return await this.findPaging(query, data, $pipeline);
-            } catch (e) {
-                throw e;
-            }
+    public async getPaging<T>(data: EmployeeGetDto) {
+        try {
+            let query = {
+                isDeleted: false,
+            };
+
+            const $project = {
+                $project: {
+                    _id: 1,
+                    firstname: 1,
+                    lastname: 1,
+                    phoneNumber: 1,
+                    roleId: 1,
+                }
+            };
+            const $pipeline = [$project];
+            return await this.findPaging(query, data, $pipeline);
+        } catch (e) {
+            throw e;
+        }
     }
 }
 

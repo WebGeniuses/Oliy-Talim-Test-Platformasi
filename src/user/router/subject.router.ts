@@ -7,6 +7,6 @@ const router = Router();
 router
     .get('/getbyId/:_id', userToken, getByIdSubjectHandler )
     .get('/paging', userToken, getPagingSubjectHandler)
-
+    // .get('/pagingAll', userToken, getPagingAllSubjectHandler)
 
 export default router;

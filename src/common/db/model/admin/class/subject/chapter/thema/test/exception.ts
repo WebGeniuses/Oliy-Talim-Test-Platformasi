@@ -1,5 +1,6 @@
-import { ErrorCodes } from "../../../../constants/error.coders";
-import { BaseResponse } from "../../../../reporter/base.response";
+import { ErrorCodes } from "../../../../../../../../constants/error.coders";
+import { BaseResponse } from "../../../../../../../../reporter/base.response";
+
 
 export class TestResponse extends BaseResponse {
     static AllreadyExist(data: any = null) {

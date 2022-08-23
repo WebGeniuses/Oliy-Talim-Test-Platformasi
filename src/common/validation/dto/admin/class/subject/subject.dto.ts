@@ -10,7 +10,7 @@ export class SubjectDto extends BaseDto {
     @IsString({
         groups:[DtoGroups.CREATE, DtoGroups.UPDATE]
     })
-    subjectName: string;
+    name: string;
 
     @IsOptional({
         groups:[DtoGroups.UPDATE,DtoGroups.DELETE]
@@ -25,6 +25,9 @@ export class SubjectDto extends BaseDto {
 
 export class SubjectGetDto extends PagingDto {
 
+    @IsOptional({
+        groups:[DtoGroups.PAGENATION]
+    })
     @IsMongoId({
         groups:[DtoGroups.PAGENATION]
     })

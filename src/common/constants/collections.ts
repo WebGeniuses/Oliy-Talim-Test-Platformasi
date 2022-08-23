@@ -12,10 +12,12 @@ export enum CollectionNames {
     THEMA = 'themas',
     TESTS = "tests",
     QUESTION = 'questions',
-
+    QUIZ = "quiz",
 
     USERS= 'users',
+
     SET_ANSWERS = "setAnswers",
+    
     REGION = 'region',
     RESAULT = 'resault',
     USER_TYPE = "usertype",

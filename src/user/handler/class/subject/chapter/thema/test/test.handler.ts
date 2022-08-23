@@ -1,4 +1,4 @@
-import { TestResponse } from "../../../../../../../common/db/model/admin/test/exception";
+import { TestResponse } from "../../../../../../../common/db/model/admin/class/subject/chapter/thema/test/exception";
 import { testService } from "../../../../../../../common/services/Admin/class/subject/chapter/thema/test/test.service";
 import { TestGetDto, TestDto } from "../../../../../../../common/validation/dto/admin/class/subject/chapter/thema/test/test.dto";
 import { DtoGroups } from "../../../../../../../common/validation/dtoGroups.dto";

@@ -1,7 +1,6 @@
 import { ModelType } from "@typegoose/typegoose/lib/types";
-import { Class, ClassModel } from "../../../db/model/admin/class/class.model";
+import { Class, ClassModel } from "../../../db/model/admin/class/model";
 import { ClassResponse } from "../../../db/model/admin/class/exception";
-import { SubjectResponse } from "../../../db/model/admin/subject/exception";
 import { ClassGetDto } from "../../../validation/dto/admin/class/class.dto";
 import { CommonServices } from "../../common.service";
 

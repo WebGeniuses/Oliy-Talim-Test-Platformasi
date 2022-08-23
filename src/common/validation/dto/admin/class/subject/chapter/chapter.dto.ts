@@ -16,7 +16,7 @@ export class ChapterDto extends BaseDto {
     @IsString({
         groups:[DtoGroups.CREATE, DtoGroups.UPDATE]
     })
-    chapterName:string;
+    name:string;
     
     @IsOptional({
         groups:[DtoGroups.UPDATE]

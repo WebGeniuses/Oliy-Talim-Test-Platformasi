@@ -1,8 +1,8 @@
 import { ModelType } from "@typegoose/typegoose/lib/types";
 import { Types } from "mongoose";
-import { SubjectResponse } from "../../../../db/model/admin/subject/exception";
-import { Subject, SubjectModel } from "../../../../db/model/admin/subject/subject.model";
-import { SubjectGetDto } from "../../../../validation/dto/admin/class/subject/subject.dto";
+import { SubjectResponse } from "../../../../db/model/admin/class/subject/exceptions";
+import { Subject, SubjectModel } from "../../../../db/model/admin/class/subject/model";
+import { SubjectDto, SubjectGetDto } from "../../../../validation/dto/admin/class/subject/subject.dto";
 import { PagingDto } from "../../../../validation/dto/paging.dto";
 import { CommonServices } from "../../../common.service";
 
@@ -44,6 +44,30 @@ class SubjectServisce extends CommonServices<Subject> {
             throw e;
         }
     }
+
+
+    // public async getPagingAll<T>(data:SubjectGetDto){
+    //     try {
+    //         let query = {
+    //             isDeleted: false,
+    //         };
+    //         console.log("query:   ",query);
+
+    //         const $project = {
+    //             $project: {
+    //                 _id:1,
+    //                 subjectName:1,
+    //                 classId:1,
+    //                 isDeleted:1
+    //             }
+    //         };
+
+    //         const $pipeline = [$project];
+    //         return await this.findPaging(query, data, $pipeline);
+    //     } catch (e) {
+    //         throw e;
+    //     }
+    // }
 }
 
 

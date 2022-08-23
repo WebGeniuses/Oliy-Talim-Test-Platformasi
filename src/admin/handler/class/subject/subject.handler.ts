@@ -1,5 +1,5 @@
 import { Roles } from "../../../../common/constants/roles";
-import { SubjectResponse } from "../../../../common/db/model/admin/subject/exception";
+import { SubjectResponse } from "../../../../common/db/model/admin/class/subject/exceptions";
 import { subjectService } from "../../../../common/services/Admin/class/subject/subject.service";
 import { roleService } from "../../../../common/services/Admin/role/role.service";
 import { SubjectDto, SubjectGetDto } from "../../../../common/validation/dto/admin/class/subject/subject.dto";

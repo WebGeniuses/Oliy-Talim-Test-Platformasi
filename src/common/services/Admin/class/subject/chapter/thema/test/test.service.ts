@@ -1,8 +1,9 @@
 import { ModelType } from "@typegoose/typegoose/lib/types";
 import { Types } from "mongoose";
 import { CollectionNames } from "../../../../../../../constants/collections";
-import { TestResponse } from "../../../../../../../db/model/admin/test/exception";
-import { Test, TestModel } from "../../../../../../../db/model/admin/test/test.model";
+import { TestResponse } from "../../../../../../../db/model/admin/class/subject/chapter/thema/test/exception";
+import { Test, TestModel } from "../../../../../../../db/model/admin/class/subject/chapter/thema/test/model";
+
 import { TestGetDto } from "../../../../../../../validation/dto/admin/class/subject/chapter/thema/test/test.dto";
 import { CommonServices } from "../../../../../../common.service";
 
@@ -18,6 +19,13 @@ class TestService extends CommonServices<Test>{
         } catch (e) {
             return e;
         }
+    }
+
+    public async getById(id) {
+        const res = await this.findById(new Types.ObjectId(id))
+        if (!res) throw TestResponse.NotFound(id)
+
+        return res;
     }
 
 
@@ -215,8 +223,8 @@ class TestService extends CommonServices<Test>{
                 $lookupQuestion,
                 $project
             ];
-            const data = await this.aggregate($pipeline);
-            if (!data || !data[0]) throw TestResponse.NotFound(data);
+            const data = (await this.aggregate($pipeline)).shift();
+            if (!data) throw TestResponse.NotFound(data);
             return data;
 
         } catch (e) {

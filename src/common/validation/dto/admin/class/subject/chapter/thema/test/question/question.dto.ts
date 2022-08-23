@@ -103,9 +103,6 @@ export class QuestionGetDto extends PagingDto {
     })
     themaId: string;
 
-    @IsOptional({
-        groups: [DtoGroups.PAGENATION]
-    })
     @IsMongoId({
         groups: [DtoGroups.PAGENATION]
     })

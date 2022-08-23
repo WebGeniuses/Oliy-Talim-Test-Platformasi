@@ -1,5 +1,5 @@
 import express from "express";
-import { appendFile } from "fs";
+import  cron  from "node-cron";
 import { ENV } from "../common/config/config";
 import { connectDB } from "../common/db/connector";
 import { BaseResponse } from "../common/reporter/base.response";
@@ -10,9 +10,9 @@ import subjectRouter from './router/subject.router';
 import chapterRouter from './router/chapter.router';
 import themaRouter from './router/thema.router';
 import testRouter from './router/test.router';
-import a from './router/news.router';
-import b from './router/news.router';
-import c from './router/news.router';
+import answerRouter from './router/answer.router';
+import questionRouter from './router/question';
+import quizRouter from './router/quiz.router';
 
 !async function () {
     const app = express();
@@ -20,14 +20,20 @@ import c from './router/news.router';
     app.use(express.json());
     app.use('/user', userRouter);
     app.use('/news', newsRouter);
-    app.use("/class",classRouter);
-    app.use("/subject",subjectRouter);
-    app.use("/chapter",chapterRouter);
-    app.use("/thema",themaRouter);
-    app.use("/test",testRouter);
+    app.use("/class", classRouter);
+    app.use("/subject", subjectRouter);
+    app.use("/chapter", chapterRouter);
+    app.use("/thema", themaRouter);
+    app.use("/test", testRouter);
+    app.use('/question', questionRouter);
+    app.use('/quiz', quizRouter);
+    app.use('/setAnswer', answerRouter);
 
-    // app.get('/',(req, res)=>{
-    //     res.send("okk")
+    // const a = cron.schedule('* * * * * *', () => {
+    //      
+    // });
+    // app.get('/', (req, res) => {
+    //     res.send(`vaqt: ${a}, ` )
     // })
 
 

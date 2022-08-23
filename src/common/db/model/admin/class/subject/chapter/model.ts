@@ -1,8 +1,8 @@
 import { getModelForClass, index, modelOptions, prop, Ref } from "@typegoose/typegoose";
 import { Types } from "mongoose";
-import { CollectionNames } from "../../../../constants/collections";
-import { BaseModel } from "../../base.model";
-import { Subject } from "../subject/subject.model";
+import { CollectionNames } from "../../../../../../constants/collections";
+import { BaseModel } from "../../../../base.model";
+import { Subject } from "../model";
 
 
 
@@ -13,11 +13,11 @@ import { Subject } from "../subject/subject.model";
 })
 
 @index({
-    chapterName: 1
+    name: 1
 },
     {
         background: true,
-        name: 'chapterName',
+        name: 'name',
         unique: true,
         partialFilterExpression: {
             isDeleted: {
@@ -30,7 +30,7 @@ export class Chapter extends BaseModel{
     @prop({
         required: true,
     })
-    chapterName: string;
+    name: string;
 
     @prop({
         ref: CollectionNames.SUBJECT,

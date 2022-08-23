@@ -1,6 +1,6 @@
 import { Types } from "mongoose";
 import { Roles } from "../../../../../../../../common/constants/roles";
-import { QuestionResponse } from "../../../../../../../../common/db/model/admin/test/question/exception";
+import { QuestionResponse } from "../../../../../../../../common/db/model/admin/class/subject/chapter/thema/test/question/exception";
 import { questionService } from "../../../../../../../../common/services/Admin/class/subject/chapter/thema/test/questions/question.service";
 import { roleService } from "../../../../../../../../common/services/Admin/role/role.service";
 import { QuestionGetDto, TestQuestionDto } from "../../../../../../../../common/validation/dto/admin/class/subject/chapter/thema/test/question/question.dto";
@@ -30,9 +30,9 @@ export async function getPagingQuestion(req, res, next) {
         let query = {
             testId: new Types.ObjectId(data.testId)
         }
-        const testCount = await questionService.getCount(query)
+        const Count = await questionService.getCount(query)
         const resault  = {
-            TestCount: testCount,
+            questioncount: Count,
             Questions: question
         }
         return await res.send(QuestionResponse.Success(resault));

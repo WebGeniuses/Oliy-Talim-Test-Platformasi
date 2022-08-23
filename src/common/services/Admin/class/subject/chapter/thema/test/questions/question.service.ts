@@ -1,7 +1,6 @@
 import { ModelType } from "@typegoose/typegoose/lib/types";
 import { Types } from "mongoose";
-import { QuestionResponse } from "../../../../../../../../db/model/admin/test/question/exception";
-import { QuestionModel, TestQuestion } from "../../../../../../../../db/model/admin/test/question/question.model";
+import { TestQuestion, QuestionModel } from "../../../../../../../../db/model/admin/class/subject/chapter/thema/test/question/model";
 import { QuestionGetDto } from "../../../../../../../../validation/dto/admin/class/subject/chapter/thema/test/question/question.dto";
 import { TestGetDto } from "../../../../../../../../validation/dto/admin/class/subject/chapter/thema/test/test.dto";
 import { CommonServices } from "../../../../../../../common.service";

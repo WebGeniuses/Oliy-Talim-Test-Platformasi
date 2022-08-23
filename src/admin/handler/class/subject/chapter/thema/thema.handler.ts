@@ -1,5 +1,5 @@
 import { Roles } from "../../../../../../common/constants/roles";
-import { ThemaResponse } from "../../../../../../common/db/model/admin/thema/exception";
+import { ThemaResponse } from "../../../../../../common/db/model/admin/class/subject/chapter/thema/exception";
 import { themaService } from "../../../../../../common/services/Admin/class/subject/chapter/thema/thema.service";
 import { roleService } from "../../../../../../common/services/Admin/role/role.service";
 import { ThemaDto, ThemaGetDto } from "../../../../../../common/validation/dto/admin/class/subject/chapter/thema/thema.dto";
@@ -24,8 +24,11 @@ export async function getPagingThemaHandler(req, res, next) {
         // await roleService.hasAccess(req.roleId, Roles.THEMA);
         const data = await validateIt(req.query, ThemaGetDto, DtoGroups.PAGENATION);
         const thema = await themaService.getpagingThema(data);
-        const count = await themaService.getCount();
-        if(!thema) throw ThemaResponse.NotFound(data);
+        const Id = {
+            chapterId: data.chapterId
+        }
+        const count = await themaService.getCount(Id);
+        if(!thema[0]) throw ThemaResponse.NotFound(data);
         const resault = {
             data: thema,
             themaCount: count,
